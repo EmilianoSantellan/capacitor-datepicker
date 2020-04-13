@@ -6,9 +6,8 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 
-import android.content.DialogInterface;
 import android.graphics.Color;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -70,7 +69,7 @@ public class DatePickerPlugin extends Plugin {
             calendar.setTime(javaData);
             if (mode.equals("time")) {
 
-                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), getTheme(theme), new TimePickerDialog.OnTimeSetListener() {
+                final TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), getTheme(theme), new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         Calendar calendar1 = Calendar.getInstance();
@@ -104,6 +103,7 @@ public class DatePickerPlugin extends Plugin {
                     public void onClick(View v) {
                         res.put("value", null);
                         call.resolve(res);
+                        timePickerDialog.dismiss();
                     }
                 });
 
@@ -166,6 +166,7 @@ public class DatePickerPlugin extends Plugin {
                     public void onClick(View v) {
                         res.put("value", null);
                         call.resolve(res);
+                        datePickerDialog.dismiss();
                     }
                 });
 
