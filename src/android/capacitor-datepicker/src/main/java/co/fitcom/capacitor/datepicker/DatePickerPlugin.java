@@ -57,7 +57,7 @@ public class DatePickerPlugin extends Plugin {
         String min = call.getString("min");
         final String cancelText = call.getString("cancelText", "Cancel");
         final String okText = call.getString("okText", "Ok");
-        boolean is24Hours = call.getBoolean("is24Hours", false);
+        boolean is24Hours = call.getBoolean("is24Hours", true);
         String theme = call.getString("theme");
         String title = call.getString("title");
         String okButtonColor = call.getString("okButtonColor");
@@ -81,7 +81,7 @@ public class DatePickerPlugin extends Plugin {
                 }, calendar.get(Calendar.HOUR), calendar.get(Calendar.MINUTE), is24Hours);
 
                 if (title != null) {
-                    timePickerDialog.setTitle(title);
+                    //timePickerDialog.setTitle(title);
                 }
 
                 timePickerDialog.create();
@@ -133,7 +133,7 @@ public class DatePickerPlugin extends Plugin {
 
 
                 if (title != null) {
-                    datePickerDialog.setTitle(title);
+                    //datePickerDialog.setTitle(title);
                 }
 
                 datePickerDialog.create();
