@@ -78,7 +78,7 @@ public class DatePickerPlugin extends Plugin {
                         res.put("value", toISO8601UTC(calendar1.getTime()));
                         call.resolve(res);
                     }
-                }, calendar.get(Calendar.HOUR), calendar.get(Calendar.MINUTE), is24Hours);
+                }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), is24Hours);
 
                 if (title != null) {
                     //timePickerDialog.setTitle(title);
