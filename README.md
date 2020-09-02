@@ -6,7 +6,7 @@
 
 ## Installation
 
-`npm i capacitor-datepicker`
+`npm i https://github.com/EmilianoSantellan/capacitor-datepicker.git`
 
 ## Usage
 
