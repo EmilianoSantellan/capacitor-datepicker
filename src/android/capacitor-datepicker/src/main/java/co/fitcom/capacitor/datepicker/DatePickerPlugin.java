@@ -31,7 +31,7 @@ import co.fitcom.capacitor.datepicker.capacitordatepicker.R;
 public class DatePickerPlugin extends Plugin {
 
     private String toISO8601UTC(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
         TimeZone tz = TimeZone.getTimeZone("UTC");
         dateFormat.setTimeZone(tz);
 
@@ -39,7 +39,7 @@ public class DatePickerPlugin extends Plugin {
     }
 
     private Date fromISO8601UTC(String date) throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
         TimeZone tz = TimeZone.getTimeZone("UTC");
         dateFormat.setTimeZone(tz);
         return dateFormat.parse(date);
